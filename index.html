@@ -22,7 +22,7 @@
                 <div>{{ playerLife }}%</div>
             </div>
             <div class="score">
-                <h1>Jogador</h1>
+                <h1>Monstro</h1>
                 <div class="life-bar">
                     <div class="life"
                     :class="{danger: monsterLife < 20}"
@@ -31,7 +31,10 @@
                 <div>{{ monsterLife }}%</div>
             </div>
         </div>
-        <div class="panel result"></div>
+        <div v-if="hasResult" class="panel result">
+            <div v-if="monsterLife == 0" class="win">Voçê ganhou!!! :)</div>
+            <div v-else class="lose">Voçê perdeu!!! :/</div>
+        </div>
         <div class="panel buttons"></div>
         <div class="panel logs"></div>
     </div>
